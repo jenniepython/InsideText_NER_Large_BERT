@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Streamlit Entity Linker Application with Lightweight Open Source Models
+Streamlit Entity Linker Application with the bert-large-NER model
 
-A web interface for entity extraction and linking using lightweight open-source models.
+A web interface for entity extraction and linking using the bert-large-NER model.
 This application provides contextual entity extraction and linking
 to external knowledge bases using reliable, easy-to-install models.
 
@@ -1120,8 +1120,8 @@ class StreamlitEntityLinker:
         st.markdown("<br>", unsafe_allow_html=True)
         
         # Main title and description
-        st.header("From Text to Linked Data using Lightweight Models")
-        st.markdown("**Extract and link named entities using reliable, lightweight open-source models**")
+        st.header("From Text to Linked Data using the bert-large-NER model")
+        st.markdown("**Extract and link named entities using the bert-large-NER model**")
         
         # Create a simple process diagram
         st.markdown("""
@@ -1132,7 +1132,7 @@ class StreamlitEntityLinker:
                 </div>
                 <div style="margin: 10px 0;">⬇️</div>
                 <div style="background-color: #9fd2cd; padding: 10px; border-radius: 5px; display: inline-block; margin: 5px;">
-                     <strong>Lightweight NER + Smart Patterns</strong>
+                     <strong>bert-large-NER model + Smart Patterns</strong>
                 </div>
                 <div style="margin: 10px 0;">⬇️</div>
                 <div style="text-align: center;">
@@ -1282,7 +1282,7 @@ class StreamlitEntityLinker:
             st.info("This text has already been processed. Results shown below.")
             return
         
-        with st.spinner("Processing text with improved lightweight models..."):
+        with st.spinner("Processing text with improved the bert-large-NER model..."):
             try:
                 # Create a progress bar
                 progress_bar = st.progress(0)
@@ -1595,7 +1595,7 @@ class StreamlitEntityLinker:
                 "text": st.session_state.processed_text,
                 "dateCreated": str(pd.Timestamp.now().isoformat()),
                 "title": st.session_state.analysis_title,
-                "processingMethod": "Improved Lightweight Open Source Models + Smart Patterns",
+                "processingMethod": "The bert-large-NER model + Smart Patterns",
                 "modelInfo": {
                     "nerModel": "dslim/bert-large-NER",
                     "aggregationStrategy": "max",
