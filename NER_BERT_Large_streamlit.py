@@ -13,7 +13,7 @@ import streamlit as st
 
 # Configure Streamlit page
 st.set_page_config(
-    page_title="From Text to Linked Data using Open Source Model: dslim/bert-base-NER",
+    page_title="From Text to Linked Data using Open Source Model: dslim/bert-large-NER",
     layout="centered",  
     initial_sidebar_state="collapsed" 
 )
@@ -141,7 +141,7 @@ class LightweightEntityLinker:
     Main class for open-source entity linking functionality.
     
     This class handles the complete pipeline from text processing to entity
-    extraction using the dslim/bert-base-NER model, validation, linking, and output generation.
+    extraction using the dslim/bert-large-NER model, validation, linking, and output generation.
     """
     
     def __init__(self):
@@ -177,14 +177,14 @@ class LightweightEntityLinker:
             # Load NER model
             with st.spinner("Loading NER model..."):
                 try:
-                    ner_model_name = "dslim/bert-base-NER"
+                    ner_model_name = "dslim/bert-large-NER"
                     self.ner_pipeline = pipeline(
                         "ner",
                         model=ner_model_name,
                         tokenizer=ner_model_name,
                         aggregation_strategy="max"  # Better for multi-word entities
                     )
-                    st.success("dslim/bert-base-NER model loaded successfully")
+                    st.success("dslim/bert-large-NER model loaded successfully")
                 except Exception as e:
                     st.error(f"Failed to load NER model: {e}")
                     # Fallback to using pattern matching only
@@ -1187,7 +1187,7 @@ class StreamlitEntityLinker:
         """Render the sidebar with model information."""
         st.sidebar.subheader("Model Information")
         st.sidebar.info("""
-        **NER Model**: BERT-based NER (dslim/bert-base-NER)
+        **NER Model**: BERT-based NER (dslim/bert-large-NER)
         
         **Pattern Recognition**: Smart regex patterns for emails, URLs, addresses, phone numbers, money amounts
         
@@ -1597,7 +1597,7 @@ class StreamlitEntityLinker:
                 "title": st.session_state.analysis_title,
                 "processingMethod": "Improved Lightweight Open Source Models + Smart Patterns",
                 "modelInfo": {
-                    "nerModel": "dslim/bert-base-NER",
+                    "nerModel": "dslim/bert-large-NER",
                     "aggregationStrategy": "max",
                     "confidenceThreshold": 0.3,
                     "patternMethods": ["email", "url", "address", "phone", "money", "year", "title_person"],
@@ -1730,7 +1730,7 @@ class StreamlitEntityLinker:
                     </div>
                     <div class="method-info">
                         <h3>Processing Methods:</h3>
-                        <p>• <strong>Transformer NER</strong>: BERT-based model (dslim/bert-base-NER) with "max" aggregation</p>
+                        <p>• <strong>Transformer NER</strong>: BERT-based model (dslim/bert-large-NER) with "max" aggregation</p>
                         <p>• <strong>Pattern Recognition</strong>: Enhanced regex for addresses, years, titles, emails, URLs, phones, money</p>
                         <p>• <strong>Contextual Analysis</strong>: Semantic categorization including theatre-specific terms</p>
                     </div>
