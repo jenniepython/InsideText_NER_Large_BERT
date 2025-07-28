@@ -1,0 +1,12 @@
+streamlit
+torch
+transformers
+numpy
+pandas
+requests
+streamlit-authenticator
+folium 
+streamlit-folium
+plotly
+pyyaml
+pycountry
