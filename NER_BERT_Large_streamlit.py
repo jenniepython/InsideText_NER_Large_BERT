@@ -233,7 +233,9 @@ class LightweightEntityLinker:
                     #    continue
                     
                     # Better entity text handling
-                    entity_text = ent['word'].strip()
+                    #entity_text = ent['word'].strip()
+                    entity_text = text[ent['start']:ent['end']]
+
                     
                     # Create entity dictionary
                     entity = {
