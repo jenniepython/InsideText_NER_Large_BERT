@@ -182,7 +182,7 @@ class LightweightEntityLinker:
                         "ner",
                         model=ner_model_name,
                         tokenizer=ner_model_name,
-                        aggregation_strategy="simple"  # Better for multi-word entities
+                        aggregation_strategy="max"  # Better for multi-word entities
                     )
                     st.success("dslim/bert-large-NER model loaded successfully")
                 except Exception as e:
