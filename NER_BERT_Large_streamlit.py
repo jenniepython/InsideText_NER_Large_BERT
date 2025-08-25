@@ -1468,7 +1468,7 @@ class StreamlitEntityLinker:
             st.info("No highlighted text available. Process some text first.")
         
         # Entity analysis tabs
-        tab1, tab2, tab3 = st.tabs(["Entity Summary", "🔍 Detailed Analysis", "📤 Export Options"])
+        tab1, tab2, tab3 = st.tabs(["Entity Summary", "Detailed Analysis", "Export Options"])
         
         with tab1:
             self.render_entity_summary(entities)
@@ -1723,7 +1723,7 @@ class StreamlitEntityLinker:
                         </div>
                     </div>
                     <div class="improvement-note">
-                        <h3>🚀 Improvements Made:</h3>
+                        <h3>Improvements Made:</h3>
                         <p>• <strong>Lower Confidence Threshold</strong>: Reduced from 0.6 to 0.3 for better entity capture</p>
                         <p>• <strong>Better Aggregation</strong>: Changed to "max" strategy for multi-word entities</p>
                         <p>• <strong>Relaxed Validation</strong>: Less restrictive entity filtering</p>
