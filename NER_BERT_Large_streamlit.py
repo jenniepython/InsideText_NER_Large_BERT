@@ -1098,7 +1098,7 @@ class StreamlitEntityLinker:
             st.warning(f"Could not load logo: {e}")        
         
         st.markdown("<br>", unsafe_allow_html=True)
-        st.header(Enhanced NER: From Text to Linked Data")
+        st.header("Enhanced NER: From Text to Linked Data")
         st.markdown("**Improved entity extraction using enhanced bert-large-NER model to match FLAIR performance**")
         
         # Enhanced process diagram
